@@ -13,7 +13,7 @@ header {
     margin:0;
 }
 
-h1 {
+r1 {
     font-family: 'Courier New', monospace;
     display: inline-block;
     text-align: center;
@@ -58,7 +58,7 @@ a:hover {
     justify-content: space-between;
 }
 
-.card img {
+.img {
     width: 100px;
     height: 100px;
 }
