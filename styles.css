@@ -1,71 +1,74 @@
+@import url('https://fonts.googleapis.com/css2? family= Poppins:ital@1 & family= Roboto:wght@400;700 & display=swap');
+
 body {
-    font-family: 'Courier New',  sans-serif;
     background-color: #ffffff;
-    margin: 0;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(51, 51, 51);
-    padding: 20px;
-    margin:0;
-}
-
-r1 {
-    font-family: 'Courier New', monospace;
-    display: inline-block;
-    text-align: center;
-    color: #ffffff;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-img {
-    display: inline-block;
-    margin-left: 1%;
-    width: 100px;
-}
-
-h3 {
-    margin-left: 20px;
-    color: #666666;
-}
-
-a {
-    text-decoration: none;
-    color: #0099ff;
-}
-
-a:hover {
-    color: #ff6600;
-}
-
-/* Novo código */
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
     
 }
 
-.card {
-    width: 50%;
-    box-sizing: border-box;
-    padding: 10px;
-    border: 15px solid rgb(51, 51, 51);
+.tabela {
+    width: 80%;
+    max-width: 10000px;
+    background-color: #000000fb;
+    border-style: solid;
+    border-color: #000000;
+    
+}
+
+.item {
+    display: flex;
     justify-content: space-between;
+    margin-bottom: 05px;
+    padding: 05px;
+  
 }
 
-.img {
-    width: 100px;
-    height: 100px;
-}
+.link{
+    font-family: 'Roboto', sem serifa;
+    font-size: 25px;
+    text-align: justify;
 
-footer {
-    background-color: rgb(51, 51, 51);
-    color: #ffffff;
-    padding: 25px;
+}
+.img{
+    height: 200px;
+    width: 230px;
+    border-radius:110px;
+    border-color: #000000;
+    
+}
+.titulo{
+    border-top: 20px solid rgb(0, 0, 0);
+    background-color: rgb(0, 58, 10);
+    width: 80%;
+    max-width: 10000px;
     text-align: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.r1{
+    background-color: rgb(255, 175, 3);
+}
+.r2{
+    background-color: rgb(120, 0, 201);
+}.r3{
+    background-color: rgb(230, 7, 7);
+}.r4{
+    background-color: rgb(255, 210, 61);
+}.r5{
+    background-color: rgb(196, 199, 5);
+}.r6{
+    background-color: rgb(4, 121, 13);
+}.r7{
+    background-color: rgb(0, 59, 5);
+}.r8{
+    background-color: rgb(99, 3, 3);
+}.r9{
+    background-color: rgb(69, 255, 109);
+}.r10{
+    background-color: rgb(255, 255, 255);
+}
+.p{
+    font-family: 'Poppins', sem serifa;
+    color: #000;
+    font-size: 35px;
+    
 }
