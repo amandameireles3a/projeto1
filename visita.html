@@ -1,9 +1,52 @@
-<html>
-  <haed>
-    <body>
-      Aqui ficará o texto de relatório da visita técnica.<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria de Imagens Ampliáveis</title>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
-      <h1>Aqui ficará a Galeria de Fotos</h1><br>
-    </body>
-  </haed>
+</head>
+<body>
+<div class="gallery">
+  <div class="sla">
+  <img src="arvore.jpg" alt="Imagem 1" onclick="openModal(this)">
+  <img src="camera.jpg" alt="Imagem 2" onclick="openModal(this)">
+  <img src="coelho.jpg" alt="Imagem 3" onclick="openModal(this)">
+  <img src="estrada.jpg" alt="Imagem 4" onclick="openModal(this)">
+  <img src="galinha.jpg" alt="Imagem 5" onclick="openModal(this)">
+  <img src="ipe.jpg" alt="Imagem 6" onclick="openModal(this)">
+  <div class="sla"></div>
+  <img src="paisagem.jpg" alt="Imagem 7" onclick="openModal(this)">
+  <img src="pessoas.jpg" alt="Imagem 8" onclick="openModal(this)">
+  <img src="ping.jpg" alt="Imagem 9" onclick="openModal(this)">
+  <img src="porco.jpg" alt="Imagem 10" onclick="openModal(this)">
+  
+  <!-- Adicione mais imagens aqui -->
+</div>
+
+<div class="modal" id="modal">
+  <span class="modal-content">
+    <img id="modal-image" src="" alt="Imagem Ampliada">
+  </span>
+</div>
+
+<script>
+function openModal(imgElement) {
+  const modal = document.getElementById("modal");
+  const modalImage = document.getElementById("modal-image");
+
+  modalImage.src = imgElement.src;
+  modal.style.display = "flex";
+
+  modal.addEventListener("click", closeModal);
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+  modal.removeEventListener("click", closeModal);
+}
+</script>
+</body>
 </html>
