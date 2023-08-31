@@ -1,1 +1,54 @@
 
+
+
+.tabela {
+    width: 100%;
+    max-width: 10000px;
+    background-color: #000000fb;
+    border-style: solid;
+    border-color: #050505;
+    
+}
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gallery img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px;
+    cursor: pointer;
+    
+    
+}
+
+.sla{
+display:flex;
+}
+
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    max-width: 450%;
+    max-height: 800%;
+    overflow: hidden; /* Impede que a imagem se estenda além do contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-image {
+    max-width: 100%; /* Controla o tamanho máximo da imagem ampliada */
+    max-height: 100%; /* Controla o tamanho máximo da imagem ampliada */
+  }
