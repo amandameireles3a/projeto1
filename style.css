@@ -1,5 +1,8 @@
 
-
+body {
+    background-color: #ffffff;
+    
+}
 
 .tabela {
     width: 100%;
@@ -10,6 +13,18 @@
     
 }
 
+.sla{
+    display: flex; 
+
+}
+
+.item {
+    
+    justify-content: space-between;
+    margin-bottom: 05px;
+    padding: 05px;
+  
+}
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -17,8 +32,10 @@
   .gallery img {
     max-width: 200px;
     max-height: 200px;
-    margin: 10px;
+    padding: 30px 0;
+    margin: 60px;
     cursor: pointer;
+    justify-content: space-between;
     
     
 }
@@ -33,14 +50,14 @@ display:flex;
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
   }
   .modal-content {
-    max-width: 450%;
+    max-width: 800%;
     max-height: 800%;
     overflow: hidden; /* Impede que a imagem se estenda além do contêiner */
     display: flex;
@@ -52,3 +69,10 @@ display:flex;
     max-width: 100%; /* Controla o tamanho máximo da imagem ampliada */
     max-height: 100%; /* Controla o tamanho máximo da imagem ampliada */
   }
+
+  .p{
+    font-family: 'Poppins', sem serifa;
+    color: #000;
+    font-size: 35px;
+    
+}
