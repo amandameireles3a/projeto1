@@ -59,7 +59,7 @@ display:flex;
   .modal-content {
     max-width: 800%;
     max-height: 800%;
-    overflow: hidden; /* Impede que a imagem se estenda além do contêiner */
+    overflow: visible; /* Impede que a imagem se estenda além do contêiner */
     display: flex;
     justify-content: center;
     align-items: center;
