@@ -32,7 +32,7 @@ body {
   .gallery img {
     max-width: 200px;
     max-height: 200px;
-    padding: 30px 0;
+    padding: 70px 0;
     margin: 60px;
     cursor: pointer;
     justify-content: space-between;
