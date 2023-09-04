@@ -66,8 +66,8 @@ display:flex;
   }
 
   .modal-image {
-    max-width: 700%; /* Controla o tamanho máximo da imagem ampliada */
-    max-height: 700%; /* Controla o tamanho máximo da imagem ampliada */
+    max-width: 900%; /* Controla o tamanho máximo da imagem ampliada */
+    max-height: 900%; /* Controla o tamanho máximo da imagem ampliada */
   }
 
   .p{
