@@ -1,34 +1,60 @@
-<html>
-  <head>
-    <tittle> Audio e Video </tittle>
-  </head>
-  <body>
-  <h1>Música 1 </h1>
-  <audio controls>
-  <source src="tentaacreditar.mp3" type="audio/mpeg">
-  </audio>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Música</title>
+</head>
+<body>
+    <h1>Player de Música</h1>
+    <audio id="player" controls>
+        <source src="musica/musica1.mp3" type="audio/mp3">
+    </audio>
 
-	  
-<h1>Música 2 </h1>
-<audio controls>
-<source src="Velhainfância.mp3" type="audio/mpeg">	
-</audio>
+    <div>
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="nextSong()">Próxima Música</button>
+        <button onclick="prevSong()">Música Anterior</button>
+    </div>
 
-	  
-  <h1>Vídeo 1</h1>
-  <video width="320" height="240" controls>
-  <source src="ReiLeão.mp4" type="video/mp4">
-  </video>
+    <script>
+        const player = document.getElementById("player");
+        const playlist = [
+            "musica/musica1.mp3",
+            "musica/musica2.mp3",
+            "musica/musica3.mp3",
+            "musica/musica4.mp3",
+            "musica/musica5.mp3",
+            "musica/musica6.mp3",
+            "musica/musica7.mp3",
+            "musica/musica8.mp3",
+            "musica/musica9.mp3",
+            "musica/musica10.mp3"
+        ];
+        let currentSongIndex = 0;
 
-	  
- <h1>Vídeo 1</h1>
-  <video width="320" height="240" controls>
-  <source src="DeixemeIr.mp4" type="video/mp4">
-  </video>
+        function playPause() {
+            if (player.paused) {
+                player.play();
+            } else {
+                player.pause();
+            }
+        }
 
-	  <h1>Vídeo do YouTube</h1>
-	  <iframe width="560" height="315" src="https://www.youtube.com/embed/MGwWBm-WpYg?si=qfcsFbGcNIz9Ku_K"
-		  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-		  encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </body>
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
+            player.src = playlist[currentSongIndex];
+            player.play();
+        }
+
+        function prevSong() {
+            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+            player.src = playlist[currentSongIndex];
+            player.play();
+        }
+
+        // Carrega a primeira música
+        player.src = playlist[currentSongIndex];
+    </script>
+</body>
 </html>
