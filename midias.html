@@ -21,12 +21,11 @@
          <source src="musicas/Tá Escrito Em Meu Olhar.mp3" type="audio/mp3">
     </audio>
 
-    <div>
-        
-        <button onclick="nextSong()"> < </button>
-        <button onclick="playPause()">||</button>
-        <button onclick="prevSong()"> > </button>
-    </div>
+    <div class="player-controls">
+                <button class="prev-button" onclick="prevSong()">&#9664;</button>
+                <button class="play-pause-button" onclick="playPause()">Play/Pause</button>
+                <button class="next-button" onclick="nextSong()">&#9654;</button>
+            </div>
 
     <script>
         const player = document.getElementById("player");
