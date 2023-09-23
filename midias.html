@@ -4,67 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player de Música</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Player de Música</h1>
-    <audio id="player" controls>
-        <source src="musicas/5Regras.mp3" type="audio/mp3">
-         <source src="musicas/Duas Metades.mp3" type="audio/mp3">
-         <source src="musicas/Dói.mp3" type="audio/mp3">
-         <source src="musicas/Louca de Saudade.mp3" type="audio/mp3">
-         <source src="musicas/Namorando Com Saudade.mp3" type="audio/mp3">
-         <source src="musicas/Propaganda.mp3" type="audio/mp3">
-         <source src="musicas/Seu AStral.mp3" type="audio/mp3">
-         <source src="musicas/Todo Seu.mp3" type="audio/mp3">
-         <source src="musicas/Troca.mp3" type="audio/mp3">
-         <source src="musicas/Tá Escrito Em Meu Olhar.mp3" type="audio/mp3">
-    </audio>
-
-    <div>
-        
-        <button onclick="nextSong()"> :arrow_forward: </button>
-        <button onclick="playPause()">||</button>
-        <button onclick="prevSong()"> > </button>
+    <div class="container">
+        <header>
+            <h1>Player de Música</h1>
+        </header>
+        <div class="music-player">
+            <div class="player-controls">
+                <button class="prev-button" onclick="prevSong()">&#9664;</button>
+                <button class="play-pause-button" onclick="playPause()">Play/Pause</button>
+                <button class="next-button" onclick="nextSong()">&#9654;</button>
+            </div>
+            <div class="song-info">
+                <audio id="player" controls>
+                    <source src="musica/musica1.mp3" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
     </div>
 
     <script>
-        const player = document.getElementById("player");
-        const playlist = [
-            "musicas/5Regras.mp3",
-            "musicas/Duas Metades.mp3",
-            "musicas/Dói.mp3",
-            "musicas/Louca de Saudade.mp3",
-            "musicas/Namorando Com Saudade.mp3",
-            "musicas/Propaganda.mp3",
-            "musicas/Seu Astral.mp3",
-            "musicas/Todo Seu.mp3",
-            "musicas/Troca.mp3",
-            "musicas/Tá Escrito Em Meu Olhar.mp3"
-        ];
-        let currentSongIndex = 0;
-
-        function playPause() {
-            if (player.paused) {
-                player.play();
-            } else {
-                player.pause();
-            }
-        }
-
-        function nextSong() {
-            currentSongIndex = (currentSongIndex + 1) % playlist.length;
-            player.src = playlist[currentSongIndex];
-            player.play();
-        }
-
-        function prevSong() {
-            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-            player.src = playlist[currentSongIndex];
-            player.play();
-        }
-
-        // Carrega a primeira música
-        player.src = playlist[currentSongIndex];
+        // ... (seu código JavaScript)
     </script>
 </body>
 </html>
