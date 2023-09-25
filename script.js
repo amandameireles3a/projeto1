@@ -1,14 +1,14 @@
 let musicas = [
-    {titulo:'Velha Infancia', artista:'Jorge & Mateus', src:'musicas/5Regras.mp3', img:'imagens/5regras.jfif'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Seu Astral.mp3', img:'imagens/astral.jpg'},
-    {titulo:'Música piano', artista:'Jorge & Mateus', src:'musicas/Duas Metades.mp3', img:'imagens/duasmetades.jpg'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Dói.mp3', img:'imagens/doi.jpg'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Louca de Saudade.mp3', img:'imagens/maxresdefault.jpg'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Namorando Com Saudade.mp3', img:'imagens/namorando.jpg'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Tá Escrito Em Meu Olhar.mp3', img:'imagens/olhar.jpg'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Propaganda.mp3', img:'imagens/propaganda.jpg'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Todo Seu.mp3', img:'imagens/todoseu.jpg'},
-    {titulo:'Samba raiz', artista:'Jorge & Mateus', src:'musicas/Troca.mp3', img:'imagens/troca.jpg'},
+    {titulo:'5 Regras', artista:'Jorge & Mateus', src:'musicas/5Regras.mp3', img:'imagens/5regras.jfif'},
+    {titulo:'Seu Astral', artista:'Jorge & Mateus', src:'musicas/Seu Astral.mp3', img:'imagens/astral.jpg'},
+    {titulo:'Duas Metades', artista:'Jorge & Mateus', src:'musicas/Duas Metades.mp3', img:'imagens/duasmetades.jpg'},
+    {titulo:'Dói', artista:'Jorge & Mateus', src:'musicas/Dói.mp3', img:'imagens/doi.jpg'},
+    {titulo:'Louca de Saudade', artista:'Jorge & Mateus', src:'musicas/Louca de Saudade.mp3', img:'imagens/maxresdefault.jpg'},
+    {titulo:'Namorando Com Saudade', artista:'Jorge & Mateus', src:'musicas/Namorando Com Saudade.mp3', img:'imagens/namorando.jpg'},
+    {titulo:'Tá Escrito Em Meu Olhar', artista:'Jorge & Mateus', src:'musicas/Tá Escrito Em Meu Olhar.mp3', img:'imagens/olhar.jpg'},
+    {titulo:'Propaganda', artista:'Jorge & Mateus', src:'musicas/Propaganda.mp3', img:'imagens/propaganda.jpg'},
+    {titulo:'Todo Seu', artista:'Jorge & Mateus', src:'musicas/Todo Seu.mp3', img:'imagens/todoseu.jpg'},
+    {titulo:'Troca', artista:'Jorge & Mateus', src:'musicas/Troca.mp3', img:'imagens/troca.jpg'},
 ];  
 
 let musica = document.querySelector('audio');
