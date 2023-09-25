@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
     <title>Player de Música</title>
+     <link rel="stylesheet" href="style1.css">
+   
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Player de Música</h1>
-        </header>
-        <div class="music-player">
-          
-            <div class="song-info">
-                <audio id="player" controls>
+    <h1>Player de Música</h1>
+    <audio id="player" controls>
         <source src="musicas/5Regras.mp3" type="audio/mp3">
-        <source src="musicas/Duas Metades.mp3" type="audio/mp3">
-        <source src="musicas/Dói.mp3" type="audio/mp3">
+         <source src="musicas/Duas Metades.mp3" type="audio/mp3">
+         <source src="musicas/Dói.mp3" type="audio/mp3">
          <source src="musicas/Louca de Saudade.mp3" type="audio/mp3">
          <source src="musicas/Namorando Com Saudade.mp3" type="audio/mp3">
          <source src="musicas/Propaganda.mp3" type="audio/mp3">
@@ -25,30 +20,27 @@
          <source src="musicas/Todo Seu.mp3" type="audio/mp3">
          <source src="musicas/Troca.mp3" type="audio/mp3">
          <source src="musicas/Tá Escrito Em Meu Olhar.mp3" type="audio/mp3">
-                </audio>
-                  <div class="player-controls">
-                <button class="prev-button" onclick="prevSong()">&#9664;</button>
-                <button class="play-pause-button" onclick="playPause()">||</button>
-                <button class="next-button" onclick="nextSong()">&#9654;</button>
-            </div>
-                <div class="song-title">Nome da Música</div>
-            </div>
-        </div>
+    </audio>
+
+    <div>
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="nextSong()">Próxima Música</button>
+        <button onclick="prevSong()">Música Anterior</button>
     </div>
 
     <script>
         const player = document.getElementById("player");
         const playlist = [
-            { src: "musicas/5Regras.mp3", title: "5 Regras - Jorge & Mateus" },
-            { src: "musicas/Duas Medates.mp3", title: "Duas Medates- Jorge & Mateus" },
-            { src: "musicas/Dói.mp3", title: "Dói - Jorge & Mateus" },
-            { src: "musicas/Louca de Saudade .mp3", title: "Louca de Saudade- Jorge & Mateus" },
-            { src: "musicas/Namoradndo Com Saudade.mp3", title: "Namoradndo Com Saudade - Jorge & Mateus" },
-            { src: "musicas/Propoganda.mp3", title: "Propoganda - Jorge & Mateus" },
-            { src: "musicas/Seu Astral.mp3", title: "Seu Astral - Jorge & Mateus" },
-            { src: "musicas/Todo Seu.mp3", title: "Todo Seu - Jorge & Mateus" },
-            { src: "musicas/Troca.mp3", title: "Troca - Jorge & Mateus" },
-            { src: "musicas/Tá Escrito Em Meu Olhar.mp3", title: "Tá Escrito Em Meu Olhar -Jorge & Mateus" }
+            "musica/musica1.mp3",
+            "musica/musica2.mp3",
+            "musica/musica3.mp3",
+            "musica/musica4.mp3",
+            "musica/musica5.mp3",
+            "musica/musica6.mp3",
+            "musica/musica7.mp3",
+            "musica/musica8.mp3",
+            "musica/musica9.mp3",
+            "musica/musica10.mp3"
         ];
         let currentSongIndex = 0;
 
@@ -62,19 +54,18 @@
 
         function nextSong() {
             currentSongIndex = (currentSongIndex + 1) % playlist.length;
-            player.src = playlist[currentSongIndex].src;
-            document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
+            player.src = playlist[currentSongIndex];
             player.play();
         }
 
         function prevSong() {
             currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-            player.src = playlist[currentSongIndex].src;
-            document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
+            player.src = playlist[currentSongIndex];
             player.play();
         }
 
-       
+        // Carrega a primeira música
+        player.src = playlist[currentSongIndex];
     </script>
 </body>
 </html>
