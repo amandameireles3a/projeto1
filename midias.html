@@ -1,39 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Projeto Player Spotify</title>
+    <link rel="stylesheet" href="style1.css">
+    <title>Player de Música</title>
 </head>
 <body>
-    <img src="imagem/5regras.jfif">
-    <div class="descricao">
-        <h2>5 Regras</h2>
-        <i>Jorge & Mateus</i>
-    </div>
-    <div class="duracao">
-        <div class="barra">
-            <progress value="0" max="1"></progress>
-            <div class="ponto"></div>
+    <div class="container">
+        <header>
+            <h1>Player de Música</h1>
+        </header>
+        <div class="music-player">
+            <div class="player-controls">
+                <button class="prev-button" onclick="prevSong()">&#9664;</button>
+                <button class="play-pause-button" onclick="playPause()">Play/Pause</button>
+                <button class="next-button" onclick="nextSong()">&#9654;</button>
+            </div>
+            <div class="song-info">
+                <audio id="player" controls>
+                    <source src="musicas/5Regras.mp3" type="audio/mp3">
+                </audio>
+                <div class="song-title">Nome da Música</div>
+            </div>
         </div>
-        <div class="tempo">
-            <p class="inicio">0:00</p>
-            <p class="fim">3:40</p>
-        </div>
     </div>
-    <div class="player">
-        <i class="fas fa-step-backward setas anterior"></i>
-        <i class="fas fa-play-circle botao-play"></i>
-        <i class="fas fa-pause-circle botao-pause"></i>
-        <i class="fas fa-step-forward setas proxima"></i>
-    </div>
-    <audio src="musicas/5regras.mp3"></audio>
-    <script src="script.js"></script>
+
+    <script>
+        const player = document.getElementById("player");
+        const playlist = [
+            { src: "musicas/5Regras.mp3", title: "Música 1 - Jorge & Mateus" },
+            { src: "musicas/Duas Medates.mp3", title: "Música 2 - Jorge & Mateus" },
+            { src: "musicas/Dói.mp3", title: "Música 3 - Jorge & Mateus" },
+            { src: "musicas/Louca de Saudade .mp3", title: "Música 4 - Jorge & Mateus" },
+            { src: "musicas/Namoradndo Com Saudade.mp3", title: "Música 5 - Jorge & Mateus" },
+            { src: "musicas/Propoganda.mp3", title: "Música 6 - Jorge & Mateus" },
+            { src: "musicas/Seu Astral.mp3", title: "Música 7 - Jorge & Mateus" },
+            { src: "musicas/Todo Seu.mp3", title: "Música 8 - Jorge & Mateus" },
+            { src: "musicas/Troca.mp3", title: "Música 9 - Jorge & Mateus" },
+            { src: "musicas/Tá Escrito Em Meu Olhar.mp3", title: "Música 10 -Jorge & Mateus" }
+        ];
+        let currentSongIndex = 0;
+
+        function playPause() {
+            if (player.paused) {
+                player.play();
+            } else {
+                player.pause();
+            }
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
+            player.src = playlist[currentSongIndex].src;
+            document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
+            player.play();
+        }
+
+        function prevSong() {
+            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+            player.src = playlist[currentSongIndex].src;
+            document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
+            player.play();
+        }
+
+        // Carrega a primeira música
+        player.src = playlist[currentSongIndex].src;
+        document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
+    </script>
 </body>
 </html>
