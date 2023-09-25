@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player de Música</title>
-    <link rel="stylesheet" type="text/css" href="style1.css" media="screen" />
 </head>
 <body>
-    <h1>Player de Música</h1>
+    <h1>Meu Player de Música</h1>
+
     <audio id="player" controls>
-        <source src="musicas/5Regras.mp3" type="audio/mp3">
+         <source src="musicas/5Regras.mp3" type="audio/mp3">
          <source src="musicas/Duas Metades.mp3" type="audio/mp3">
          <source src="musicas/Dói.mp3" type="audio/mp3">
          <source src="musicas/Louca de Saudade.mp3" type="audio/mp3">
@@ -19,52 +17,48 @@
          <source src="musicas/Todo Seu.mp3" type="audio/mp3">
          <source src="musicas/Troca.mp3" type="audio/mp3">
          <source src="musicas/Tá Escrito Em Meu Olhar.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <div class="player-controls">
-                <button class="prev-button" onclick="prevSong()">&#9664;</button>
-                <button class="play-pause-button" onclick="playPause()"> || </button>
-                <button class="next-button" onclick="nextSong()">&#9654;</button>
-            </div>
+    <button id="anterior">Anterior</button>
+    <button id="play-pause">Play</button>
+    <button id="proxima">Próxima</button>
 
     <script>
-        const player = document.getElementById("player");
-        const playlist = [
-            "musicas/5Regras.mp3",
-            "musicas/Duas Metades.mp3",
-            "musicas/Dói.mp3",
-            "musicas/Louca de Saudade.mp3",
-            "musicas/Namorando Com Saudade.mp3",
-            "musicas/Propaganda.mp3",
-            "musicas/Seu Astral.mp3",
-            "musicas/Todo Seu.mp3",
-            "musicas/Troca.mp3",
-            "musicas/Tá Escrito Em Meu Olhar.mp3"
-        ];
-        let currentSongIndex = 0;
+       
+        const player = document.getElementById('player');
+        const playPauseButton = document.getElementById('play-pause');
+        const anteriorButton = document.getElementById('anterior');
+        const proximaButton = document.getElementById('proxima');
 
-        function playPause() {
+        const musicas = ['caminho_da_musica1.mp3', 'caminho_da_musica2.mp3'];
+        let musicaAtual = 0;
+
+        function togglePlayPause() {
             if (player.paused) {
                 player.play();
+                playPauseButton.textContent = 'Pausa';
             } else {
                 player.pause();
+                playPauseButton.textContent = 'Play';
             }
         }
 
-        function nextSong() {
-            currentSongIndex = (currentSongIndex + 1) % playlist.length;
-            player.src = playlist[currentSongIndex];
+        function tocaAnterior() {
+            musicaAtual = (musicaAtual - 1 + musicas.length) % musicas.length;
+            player.src = musicas[musicaAtual];
             player.play();
         }
 
-        function prevSong() {
-            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-            player.src = playlist[currentSongIndex];
+        function tocaProxima() {
+            musicaAtual = (musicaAtual + 1) % musicas.length;
+            player.src = musicas[musicaAtual];
             player.play();
         }
 
-        // Carrega a primeira música
-        player.src = playlist[currentSongIndex];
+        playPauseButton.addEventListener('click', togglePlayPause);
+        anteriorButton.addEventListener('click', tocaAnterior);
+        proximaButton.addEventListener('click', tocaProxima);
     </script>
 </body>
 </html>
