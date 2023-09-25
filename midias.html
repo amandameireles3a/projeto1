@@ -9,9 +9,16 @@
     <h1>Reprodutor de Música</h1>
 
     <audio id="audioPlayer" controls>
-        <source src="musicas/5Regras.mp3" type="audio/mpeg">
-        <source src="musicas/Duas Metades.mp3" type="audio/mpeg">
-        <source src="musicas/Dói.mp3" type="audio/mpeg">
+         <source src="musicas/5Regras.mp3" type="audio/mp3">
+         <source src="musicas/Duas Metades.mp3" type="audio/mp3">
+         <source src="musicas/Dói.mp3" type="audio/mp3">
+         <source src="musicas/Louca de Saudade.mp3" type="audio/mp3">
+         <source src="musicas/Namorando Com Saudade.mp3" type="audio/mp3">
+         <source src="musicas/Propaganda.mp3" type="audio/mp3">
+         <source src="musicas/Seu AStral.mp3" type="audio/mp3">
+         <source src="musicas/Todo Seu.mp3" type="audio/mp3">
+         <source src="musicas/Troca.mp3" type="audio/mp3">
+         <source src="musicas/Tá Escrito Em Meu Olhar.mp3" type="audio/mp3">
         
     </audio>
 
@@ -27,14 +34,14 @@
         }
 
         function rewindAudio() {
-            audioPlayer.currentTime = 0;
+            audioPlayer.currentTime = 1;
         }
     </script>
 
     <div>
         <button onclick="playAudio()">Play</button>
-        <button onclick="pauseAudio()">Pause</button>
-        <button onclick="rewindAudio()">Rebobinar</button>
+        <button onclick="pauseAudio()">||</button>
+        <button onclick="rewindAudio()"> < </button>
     </div>
 </body>
 </html>
