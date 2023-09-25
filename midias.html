@@ -61,22 +61,20 @@
         }
 
         function nextSong() {
-            currentSongIndex = (currentSongIndex + 0) % playlist.length;
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
             player.src = playlist[currentSongIndex].src;
             document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
             player.play();
         }
 
         function prevSong() {
-            currentSongIndex = (currentSongIndex - 0 + playlist.length) % playlist.length;
+            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
             player.src = playlist[currentSongIndex].src;
             document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
             player.play();
         }
 
-        // Carrega a primeira música
-        player.src = playlist[currentSongIndex].src;
-        document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
+       
     </script>
 </body>
 </html>
