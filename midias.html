@@ -61,14 +61,14 @@
         }
 
         function nextSong() {
-            currentSongIndex = (currentSongIndex + 10) % playlist.length;
+            currentSongIndex = (currentSongIndex + 0) % playlist.length;
             player.src = playlist[currentSongIndex].src;
             document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
             player.play();
         }
 
         function prevSong() {
-            currentSongIndex = (currentSongIndex - 10 + playlist.length) % playlist.length;
+            currentSongIndex = (currentSongIndex - 0 + playlist.length) % playlist.length;
             player.src = playlist[currentSongIndex].src;
             document.querySelector(".song-title").textContent = playlist[currentSongIndex].title;
             player.play();
