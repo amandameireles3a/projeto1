@@ -3,69 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player de Música</title>
-     <link rel="stylesheet" href="style1.css">
-   
+    <title>Reprodutor de Música</title>
 </head>
 <body>
-    <h1>Player de Música</h1>
-    <audio id="player" controls>
-        <source src="musicas/5Regras.mp3" type="audio/mp3">
-         <source src="musicas/Duas Metades.mp3" type="audio/mp3">
-         <source src="musicas/Dói.mp3" type="audio/mp3">
-         <source src="musicas/Louca de Saudade.mp3" type="audio/mp3">
-         <source src="musicas/Namorando Com Saudade.mp3" type="audio/mp3">
-         <source src="musicas/Propaganda.mp3" type="audio/mp3">
-         <source src="musicas/Seu AStral.mp3" type="audio/mp3">
-         <source src="musicas/Todo Seu.mp3" type="audio/mp3">
-         <source src="musicas/Troca.mp3" type="audio/mp3">
-         <source src="musicas/Tá Escrito Em Meu Olhar.mp3" type="audio/mp3">
+    <h1>Reprodutor de Música</h1>
+
+    <audio id="audioPlayer" controls>
+        <source src="5Regras.mp3" type="musicas/mpeg">
+          <source src="Duas Metades.mp3" type="musicas/mpeg">
+        Seu navegador não suporta a reprodução de áudio.
     </audio>
 
     <div>
-        <button onclick="playPause()">Play/Pause</button>
-        <button onclick="nextSong()">Próxima Música</button>
-        <button onclick="prevSong()">Música Anterior</button>
+        <button onclick="playAudio()">Play</button>
+        <button onclick="pauseAudio()">Pause</button>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" oninput="setVolume()">
     </div>
 
     <script>
-        const player = document.getElementById("player");
-        const playlist = [
-            "musica/musica1.mp3",
-            "musica/musica2.mp3",
-            "musica/musica3.mp3",
-            "musica/musica4.mp3",
-            "musica/musica5.mp3",
-            "musica/musica6.mp3",
-            "musica/musica7.mp3",
-            "musica/musica8.mp3",
-            "musica/musica9.mp3",
-            "musica/musica10.mp3"
-        ];
-        let currentSongIndex = 0;
+        const audioPlayer = document.getElementById('audioPlayer');
+        const volumeControl = document.getElementById('volumeControl');
 
-        function playPause() {
-            if (player.paused) {
-                player.play();
-            } else {
-                player.pause();
-            }
+        function playAudio() {
+            audioPlayer.play();
         }
 
-        function nextSong() {
-            currentSongIndex = (currentSongIndex + 1) % playlist.length;
-            player.src = playlist[currentSongIndex];
-            player.play();
+        function pauseAudio() {
+            audioPlayer.pause();
         }
 
-        function prevSong() {
-            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-            player.src = playlist[currentSongIndex];
-            player.play();
+        function setVolume() {
+            audioPlayer.volume = volumeControl.value;
         }
-
-        // Carrega a primeira música
-        player.src = playlist[currentSongIndex];
     </script>
 </body>
 </html>
